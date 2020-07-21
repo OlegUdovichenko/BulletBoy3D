@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour
 
     private Vector3 p0, p1, p2;
     private float t = 0;
+    //private Rigidbody rb;
 
     void FixedUpdate()
     {
@@ -30,5 +31,14 @@ public class BulletController : MonoBehaviour
         this.p0 = p0;
         this.p1 = p1;
         this.p2 = p2;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        TargetController target = other.GetComponent<TargetController>();
+        if(target)
+        {
+            Debug.Log("Vin");
+        }
     }
 }
