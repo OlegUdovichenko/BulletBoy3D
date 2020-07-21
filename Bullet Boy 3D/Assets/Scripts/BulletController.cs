@@ -18,7 +18,7 @@ public class BulletController : MonoBehaviour
             t+=0.01f;
             transform.position = Vector3.MoveTowards(transform.position,
                 a.CalculateQuadraticBezierPoint(t, p0, p1, p2),
-                _speed*Time.deltaTime);
+                _speed * Time.deltaTime);
 
             if(t >= 1)
                 _shot = false;

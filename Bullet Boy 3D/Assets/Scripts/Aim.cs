@@ -34,11 +34,11 @@ public class Aim : MonoBehaviour
                 point2.position.y, point2.position.z), _speed*Time.deltaTime);
 
             point1.position = Vector3.MoveTowards(point1.position, new Vector3(-touch_position.x, 
-                point1.position.y, point1.position.z), _speed*Time.deltaTime);
+                point1.position.y, point1.position.z), _speed * Time.deltaTime);
 
             DrawQuadraticCurve();
         }
-        
+
         if(Input.GetMouseButtonUp(0))
         {
             lineRenderer.positionCount = 0;
