@@ -11,7 +11,7 @@ public class BulletController : MonoBehaviour
     private int quantity_shots = 1;
 
     private int _shots = 0;
-    private float _speed = 50;
+    private float _speed = 1f;
     private bool _shot = false;
     private bool _rebound = false;
 
@@ -24,10 +24,9 @@ public class BulletController : MonoBehaviour
     {
         if(_shot)
         {
-            _t+=0.01f;
+            _t += _speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position,
-                aim.CalculateQuadraticBezierPoint(_t, _p0, _p1, _p2),
-                _speed * Time.deltaTime);
+                aim.CalculateQuadraticBezierPoint(_t, _p0, _p1, _p2), _speed);
 
             if(_t >= 1)
             {
@@ -40,7 +39,7 @@ public class BulletController : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position,
                 new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.2f),
-                _speed * Time.deltaTime);
+                _speed * Time.deltaTime * 10f);
 
             if(_t >= 1)
             {
