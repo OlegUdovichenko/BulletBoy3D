@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
@@ -11,15 +12,22 @@ public class CanvasController : MonoBehaviour
     public GameObject menu;
     public GameObject nextLevelBtn;
 
+    void Awake()
+    {
+        //Debug.Log(Progress.instance.coins.ToString());
+        RefreshCoinsBar();
+    }
 
     public void RefreshCoinsBar()
     {
         quantityCoins.text = Progress.instance.coins.ToString();
     }
+
     public void RefreshObjective()
     {
         objective.color = Color.red;
     }
+
     public void Result(bool result)
     {
         menu.SetActive(true);
@@ -32,5 +40,15 @@ public class CanvasController : MonoBehaviour
             endLevelText.text = "You Lose:(";
             nextLevelBtn.SetActive(false);
         }
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
