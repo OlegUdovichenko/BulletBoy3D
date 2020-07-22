@@ -27,6 +27,7 @@ public class BulletController : MonoBehaviour
             if(_t >= 1)
             {
                 _shot = false;
+                Destroy(gameObject);
                 canvas.Result(bullet_hit_target);
             }
         }
