@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collider)
     {
-        BulletController bullet = other.GetComponent<BulletController>();
+        BulletController bullet = collider.GetComponent<BulletController>();
 
         if(bullet)
         {
