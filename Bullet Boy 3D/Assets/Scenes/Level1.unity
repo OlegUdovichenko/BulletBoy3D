@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aim: {fileID: 1384893154}
   canvas: {fileID: 260507740}
+  shots: 1
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1455,6 +1456,7 @@ MonoBehaviour:
   point1: {fileID: 595876727}
   point2: {fileID: 2098470007}
   bulletController: {fileID: 28235137}
+  quantity_points: 100
 --- !u!120 &1384893155
 LineRenderer:
   m_ObjectHideFlags: 0

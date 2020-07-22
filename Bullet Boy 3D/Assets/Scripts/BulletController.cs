@@ -6,6 +6,10 @@ public class BulletController : MonoBehaviour
 {
     public Aim aim;
     public CanvasController canvas;
+    private int _shots = 0;
+
+    [SerializeField]
+    private int quantityShots = 1;
 
     private float _speed = 50;
     private bool _shot = false;
@@ -13,7 +17,7 @@ public class BulletController : MonoBehaviour
 
     private Vector3 _p0, _p1, _p2;
     private float _t = 0;
-    private bool bullet_hit_target = false;
+    private int bullet_hit_target = 0;
     
 
     void FixedUpdate()
@@ -54,9 +58,21 @@ public class BulletController : MonoBehaviour
 
     public void EndShot()
     {
+        _shots++;
         _shot = false;
-        Destroy(gameObject);
-        canvas.Result(bullet_hit_target);
+        _rebound = false;
+
+        if(_shots == quantityShots)
+        {
+            Destroy(gameObject);
+            canvas.Result(bullet_hit_target >= _shots);
+        }
+        else
+        {
+            transform.position = _p0;
+            _t = 0;
+            aim.lineRenderer.positionCount = aim.quantity_points;
+        }
     }
 
     void OnTriggerEnter(Collider collider)
@@ -70,7 +86,7 @@ public class BulletController : MonoBehaviour
         }
         else if(target)
         {
-            bullet_hit_target = true;
+            bullet_hit_target++;
             canvas.RefreshObjective();
         }
         else

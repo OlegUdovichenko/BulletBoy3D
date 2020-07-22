@@ -7,8 +7,8 @@ public class Aim : MonoBehaviour
     public LineRenderer lineRenderer;
     public Transform point0, point1, point2;
     public BulletController bulletController;
-
-    private int quantity_points = 100;
+    public int quantity_points = 100;
+    
     private Vector3[] _positions = new Vector3[100];
 
     private Vector3 touch_position;
