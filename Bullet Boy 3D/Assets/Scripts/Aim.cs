@@ -18,7 +18,7 @@ public class Aim : MonoBehaviour
         lineRenderer.positionCount = quantity_points;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(Input.GetMouseButton(0))
         {
@@ -26,8 +26,7 @@ public class Aim : MonoBehaviour
             touch_position.z = 50;
             touch_position = Camera.main.ScreenToWorldPoint(touch_position);
 
-            touch_position.x = touch_position.x > 13 ? 13 : touch_position.x;
-            touch_position.x = touch_position.x < -13 ? -13 : touch_position.x;
+            touch_position.x = Mathf.Clamp(touch_position.x, -13, 13);
             
             point2.position = Vector3.MoveTowards(point2.position, new Vector3(touch_position.x, 
                 point2.position.y, point2.position.z), _speed*Time.deltaTime);
