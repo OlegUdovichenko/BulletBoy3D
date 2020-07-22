@@ -6,11 +6,11 @@ public class BulletController : MonoBehaviour
 {
     public Aim aim;
     public CanvasController canvas;
-    private int _shots = 0;
 
     [SerializeField]
-    private int quantityShots = 1;
+    private int quantity_shots = 1;
 
+    private int _shots = 0;
     private float _speed = 50;
     private bool _shot = false;
     private bool _rebound = false;
@@ -62,7 +62,7 @@ public class BulletController : MonoBehaviour
         _shot = false;
         _rebound = false;
 
-        if(_shots == quantityShots)
+        if(_shots == quantity_shots)
         {
             Destroy(gameObject);
             canvas.Result(bullet_hit_target >= _shots);

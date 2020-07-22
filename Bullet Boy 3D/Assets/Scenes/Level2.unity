@@ -794,6 +794,7 @@ MonoBehaviour:
   point1: {fileID: 747616335}
   point2: {fileID: 1658684228}
   bulletController: {fileID: 1230315085}
+  quantity_points: 100
 --- !u!120 &564910015
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1098,7 +1099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: 0}
+  m_AnchoredPosition: {x: 360, y: 70}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1099051996
@@ -1331,6 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aim: {fileID: 564910014}
   canvas: {fileID: 1616181765}
+  quantity_shots: 1
 --- !u!1 &1288389678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,7 +1777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quantityCoins: {fileID: 1924369535}
   endLevelText: {fileID: 1507695868}
-  objective: {fileID: 129539283}
+  firstObjective: {fileID: 129539283}
+  secondObjective: {fileID: 0}
   menu: {fileID: 1396630859}
   nextLevelBtn: {fileID: 2004944461}
 --- !u!224 &1616181766
@@ -2074,7 +2077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 568}
+  m_AnchoredPosition: {x: 250, y: 640}
   m_SizeDelta: {x: 200, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800951170

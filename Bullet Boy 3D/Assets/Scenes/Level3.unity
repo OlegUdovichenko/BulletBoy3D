@@ -440,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: 0}
+  m_AnchoredPosition: {x: 360, y: 70}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &340168520
@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 568}
+  m_AnchoredPosition: {x: 250, y: 640}
   m_SizeDelta: {x: 200, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364615103
@@ -2493,7 +2493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quantityCoins: {fileID: 1471510186}
   endLevelText: {fileID: 1182313904}
-  objective: {fileID: 111478169}
+  firstObjective: {fileID: 111478169}
+  secondObjective: {fileID: 561919300}
   menu: {fileID: 1124170126}
   nextLevelBtn: {fileID: 955794088}
 --- !u!114 &1682320895
@@ -2783,7 +2784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aim: {fileID: 1015336871}
   canvas: {fileID: 1682320894}
-  quantityShots: 2
+  quantity_shots: 2
 --- !u!1 &1873568951
 GameObject:
   m_ObjectHideFlags: 0

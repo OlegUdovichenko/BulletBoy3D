@@ -8,9 +8,8 @@ public class Aim : MonoBehaviour
     public Transform point0, point1, point2;
     public BulletController bulletController;
     public int quantity_points = 100;
-    
-    private Vector3[] _positions = new Vector3[100];
 
+    private Vector3[] _positions = new Vector3[100];
     private Vector3 touch_position;
     private float _speed = 50;
 
@@ -45,8 +44,6 @@ public class Aim : MonoBehaviour
             bulletController.Shot(point0.position, point1.position, point2.position);
         }
     }
-
-
 
     private void DrawQuadraticCurve()
     {

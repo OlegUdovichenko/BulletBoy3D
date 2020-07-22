@@ -8,7 +8,11 @@ public class CanvasController : MonoBehaviour
 {
     public Text quantityCoins;
     public Text endLevelText;
-    public Image objective;
+
+    public Image firstObjective;
+    public Image secondObjective;
+    private int performed_objectives = 0;
+
     public GameObject menu;
     public GameObject nextLevelBtn;
 
@@ -25,7 +29,16 @@ public class CanvasController : MonoBehaviour
 
     public void RefreshObjective()
     {
-        objective.color = Color.red;
+        if(performed_objectives == 0)
+        {
+            firstObjective.color = Color.red;
+            performed_objectives++;
+        }
+        else
+        {
+            secondObjective.color = Color.red;
+            performed_objectives++;
+        }
     }
 
     public void Result(bool result)
