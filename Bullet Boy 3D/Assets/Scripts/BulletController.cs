@@ -50,10 +50,13 @@ public class BulletController : MonoBehaviour
     }
     public void Shot(Vector3 p0, Vector3 p1, Vector3 p2)
     {
-        _shot = true;
-        _p0 = p0;
-        _p1 = p1;
-        _p2 = p2;
+        if(!_shot)
+        {
+            _shot = true;
+            _p0 = p0;
+            _p1 = p1;
+            _p2 = p2;
+        }
     }
 
     public void EndShot()
