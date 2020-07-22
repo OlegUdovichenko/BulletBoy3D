@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CanvasController : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     public Text quantityCoins;
     public Text endLevelText;
@@ -18,7 +18,6 @@ public class CanvasController : MonoBehaviour
 
     void Awake()
     {
-        //Debug.Log(Progress.instance.coins.ToString());
         RefreshCoinsBar();
     }
 
@@ -62,6 +61,9 @@ public class CanvasController : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        if(SceneManager.GetActiveScene().buildIndex != 2)
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        else
+            SceneManager.LoadSceneAsync(0);
     }
 }
