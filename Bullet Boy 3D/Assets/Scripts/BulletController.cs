@@ -7,8 +7,9 @@ public class BulletController : MonoBehaviour
     public Aim aim;
     public CanvasController canvas;
 
-    private float _speed = 10;
+    private float _speed = 50;
     private bool _shot = false;
+    private bool _rebound = false;
 
     private Vector3 _p0, _p1, _p2;
     private float _t = 0;
@@ -26,9 +27,20 @@ public class BulletController : MonoBehaviour
 
             if(_t >= 1)
             {
-                _shot = false;
-                Destroy(gameObject);
-                canvas.Result(bullet_hit_target);
+                EndShot();
+            }
+        }
+        else if(_rebound)
+        {
+            _t+=0.04f;
+
+            transform.position = Vector3.MoveTowards(transform.position,
+                new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.2f),
+                _speed * Time.deltaTime);
+
+            if(_t >= 1)
+            {
+                EndShot();
             }
         }
     }
@@ -40,10 +52,17 @@ public class BulletController : MonoBehaviour
         _p2 = p2;
     }
 
-    void OnTriggerEnter(Collider other)
+    public void EndShot()
     {
-        CoinController coin = other.GetComponent<CoinController>();
-        TargetController target = other.GetComponent<TargetController>();
+        _shot = false;
+        Destroy(gameObject);
+        canvas.Result(bullet_hit_target);
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        CoinController coin = collider.GetComponent<CoinController>();
+        TargetController target = collider.GetComponent<TargetController>();
         if(coin)
         {
             Progress.instance.coins++;
@@ -53,6 +72,11 @@ public class BulletController : MonoBehaviour
         {
             bullet_hit_target = true;
             canvas.RefreshObjective();
+        }
+        else
+        {
+            _shot = false;
+            _rebound = true;
         }
     }
 }
