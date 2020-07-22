@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public Aim aim;
-    public CanvasController canvas;
+    public MenuController menu;
 
     [SerializeField]
     private int quantity_shots = 1;
@@ -24,7 +24,7 @@ public class BulletController : MonoBehaviour
     {
         if(_shot)
         {
-            _t+=0.01f;
+            _t+=0.02f;
             transform.position = Vector3.MoveTowards(transform.position,
                 aim.CalculateQuadraticBezierPoint(_t, _p0, _p1, _p2),
                 _speed * Time.deltaTime);
@@ -65,7 +65,7 @@ public class BulletController : MonoBehaviour
         if(_shots == quantity_shots)
         {
             Destroy(gameObject);
-            canvas.Result(bullet_hit_target >= _shots);
+            menu.Result(bullet_hit_target >= _shots);
         }
         else
         {
@@ -82,12 +82,12 @@ public class BulletController : MonoBehaviour
         if(coin)
         {
             Progress.instance.coins++;
-            canvas.RefreshCoinsBar();
+            menu.RefreshCoinsBar();
         }
         else if(target)
         {
             bullet_hit_target++;
-            canvas.RefreshObjective();
+            menu.RefreshObjective();
         }
         else
         {

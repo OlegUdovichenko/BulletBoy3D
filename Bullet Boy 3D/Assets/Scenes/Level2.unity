@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aim: {fileID: 564910014}
-  canvas: {fileID: 1616181765}
+  menu: {fileID: 1616181765}
   quantity_shots: 1
 --- !u!1 &1288389678
 GameObject:

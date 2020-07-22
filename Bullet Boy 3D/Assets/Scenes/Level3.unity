@@ -1065,7 +1065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &955794089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2783,7 +2783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aim: {fileID: 1015336871}
-  canvas: {fileID: 1682320894}
+  menu: {fileID: 1682320894}
   quantity_shots: 2
 --- !u!1 &1873568951
 GameObject:
